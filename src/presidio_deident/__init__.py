@@ -8,7 +8,7 @@ rights, for which recipient, as counts and hashes) and ``release.evidence.json``
 The record documents what was done; it never states that the output is anonymous.
 """
 
-__version__ = "0.7.0"
+__version__ = "0.7.1"
 
 RECORD_SCHEMA = "presidio-deident/dataset-release@1"
 FRAMEWORK = "dataset-release"

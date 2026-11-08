@@ -14,7 +14,8 @@ For labs that script `deident verify`, and for anyone writing their own verifier
 - **Check names and outcomes:** the strings `verify` prints for each check
   (`docs/SPEC.md` section 4), and what each check accepts. The order of checks is not part of
   the contract: key on names.
-- **The detector id** recorded in every release, `presidio-regex-pii/1`.
+- **The detector id** recorded in every release, currently `presidio-regex-pii/2`. The suffix
+  changes whenever the matches change; records keep the id they were made with.
 
 The Python modules are not a public API yet; use the CLI.
 

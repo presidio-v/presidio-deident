@@ -4,7 +4,7 @@
 
 | Version | Supported |
 |---|---|
-| 0.7.x | yes |
+| 0.7.x | yes (0.7.0 affected by GHSA-cpf4-qm84-j37m; use 0.7.1) |
 | < 0.7 | no |
 
 ## Reporting a vulnerability

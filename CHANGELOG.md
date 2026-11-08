@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.1] — 2026-11-08
+
+### Security
+
+- **Redaction bypass in the email pattern.** From 0.2.0 to 0.7.0 the email pattern was
+  anchored with a lookbehind to keep it linear. That missed an address that directly follows
+  another one through a local-part character, so in `a@b.cc+victim@example.com` the second
+  address was neither redacted by `scrub_text` nor counted by the residual scan. An explicit
+  scanner now returns exactly the matches of the original regex, in linear time; a
+  differential test checks this on random input.
+- The detector id in new records is `presidio-regex-pii/2`. Records made with `/1` keep
+  verifying.
+
 ## [0.7.0] — 2026-11-08
 
 The first version prepared for publication: a public contract a lab can script against.
