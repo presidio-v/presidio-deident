@@ -14,8 +14,7 @@ Answers for the **silver** tab at
 repository on 2026-11-08. It covers only the criteria silver *adds* on top of
 passing; passing answers carry over unchanged (see `cii-passing-answers.md`).
 
-**Silver is not reachable yet.** `access_continuity` (a MUST) is answered Unmet below,
-with what it needs. Earn passing first; submit silver once it is fixed.
+**Silver:** every criterion below is answered Met or N/A.
 
 Each row shows the **Status** to set in the dropdown and the **Justification** to
 paste. `REPO` = `https://github.com/presidio-v/presidio-deident`.
@@ -49,8 +48,8 @@ current level. It is on the README:
 | `code_of_conduct` | **Met** | Contributor Covenant at `REPO/blob/main/CODE_OF_CONDUCT.md` (standard location). |
 | `governance` | **Met** | Maintainer-led, single-steward model documented at `REPO/blob/main/GOVERNANCE.md`: ordinary changes decided on the PR, security-relevant changes (`verify.py`, `release.py`, `_detect.py`, `tables.py`, `policy.py`, `schemas/`, `docs/SPEC.md`, the sample release) need a written rationale and may not weaken a default, compatibility changes follow `SEMVER.md`, disagreements escalate to PRESIDIO Group. |
 | `roles_responsibilities` | **Met** | Key roles (steward org, maintainer, security contact, release manager, contributor) documented at `REPO/blob/main/GOVERNANCE.md#roles-and-responsibilities`. |
-| `access_continuity` | **Unmet** | Not yet met. The repository is owned by the `presidio-v` organisation, PyPI publishing uses Trusted Publishing (no personal token), and the release signing key is in the organisation password manager. But one person (`vstantch`) is the only repository admin and the only required reviewer of the `release` environment; the second code owner (`ceoofcyber`) has write access but cannot approve a release, and an emergency-access arrangement is not documented in this repository. Without that person, releases could not be cut within a week. To meet it: add a second `release`-environment reviewer, and document in `GOVERNANCE.md#project-continuity` how the owner credentials and signing key are recovered (as presidio-evidence does). |
-| `bus_factor` (SHOULD) | **Unmet** | The project has one active maintainer; a second person reviews pull requests as a code owner but does not hold admin or release rights. Bus factor is 1 today. |
+| `access_continuity` | **Met** | `REPO/blob/main/GOVERNANCE.md#project-continuity`: the repository belongs to the `presidio-v` organisation; publishing uses Trusted Publishing (no personal token); the `release` environment has two required reviewers (`vstantch`, `ceoofcyber`), either of whom can approve a publish; the release signing key is in the organisation password manager, with Bitwarden Emergency Access to a designated trustee who can take over the owner credentials and the key and grant access to another member. The release steps are documented, so another authorised engineer can cut a release within a week. |
+| `bus_factor` (SHOULD) | **Met** | Two people review, merge and approve releases (`vstantch`, `ceoofcyber`, both code owners and `release`-environment reviewers); repository ownership, the signing key and the release flow are organisation-held, documented, and covered by the emergency-access policy. See `REPO/blob/main/GOVERNANCE.md#project-continuity`. |
 
 ## Documentation
 
@@ -143,9 +142,3 @@ current level. It is on the README:
   sheet.
 - `bus_factor`, `build_repeatable` and `crypto_algorithm_agility` are SHOULD
   criteria.
-- Fix before submitting silver: `GOVERNANCE.md#project-continuity` links
-  `SECURITY.md#supply-chain-provenance`, which does not exist (the section is
-  `#verifying-releases-and-obtaining-public-signing-keys`), and its claim that more
-  than one person can assume each role is not yet backed by repository or
-  release-environment access. `SECURITY.md` should also state reporter credit and a
-  fix target.

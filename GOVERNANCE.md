@@ -67,10 +67,22 @@ unavailable. This is a property of the **organisation**, not of any one person:
   individual. The release signing key is held in the organisation's password
   manager (custody ultimately with PRESIDIO Group's leadership), not
   solely on any one contributor's machine, so it is recoverable.
-- **The release process is fully documented** — see the signed-tag → Trusted
-  Publishing flow in [SECURITY.md](SECURITY.md#verifying-releases-and-obtaining-public-signing-keys) and the
-  `.github/workflows/publish.yml` workflow — so any authorised
-  PRESIDIO Group engineer can cut a release by following it.
+- **The release process is documented** in
+  [SECURITY.md](SECURITY.md#verifying-releases-and-obtaining-public-signing-keys)
+  and `.github/workflows/publish.yml`: bump the version, date the `CHANGELOG.md`
+  entry, merge through the two-person gate, push a signed tag
+  (`git tag -s vX.Y.Z`), and a reviewer approves the `release` environment. Any
+  authorised PRESIDIO Group engineer can cut a release by following it.
+- **Two people can approve a release.** The `release` environment lists two
+  required reviewers, `@vstantch` and `@ceoofcyber`, either of whom can approve a
+  publish; both are code owners.
+- **Access is covered by an organisation policy.** PRESIDIO Group's access
+  policy for the GitHub organisation and the password manager provides
+  emergency access (Bitwarden Emergency Access): a designated PRESIDIO Group
+  trustee can take over the organisation-owner credentials and the release
+  signing key if the owner becomes unavailable, and then grant organisation
+  ownership, code-owner review and `release`-environment approval to another
+  member.
 - **PRESIDIO Group is a staffed organisation** with more than one
   person able to assume the maintainer, security-contact, and release-manager
   roles above.
