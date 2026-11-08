@@ -68,7 +68,7 @@ unavailable. This is a property of the **organisation**, not of any one person:
   manager (custody ultimately with PRESIDIO Group's leadership), not
   solely on any one contributor's machine, so it is recoverable.
 - **The release process is fully documented** — see the signed-tag → Trusted
-  Publishing flow in [SECURITY.md](SECURITY.md#supply-chain-provenance) and the
+  Publishing flow in [SECURITY.md](SECURITY.md#verifying-releases-and-obtaining-public-signing-keys) and the
   `.github/workflows/publish.yml` workflow — so any authorised
   PRESIDIO Group engineer can cut a release by following it.
 - **PRESIDIO Group is a staffed organisation** with more than one

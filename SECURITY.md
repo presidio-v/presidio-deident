@@ -12,6 +12,10 @@
 Do not open a public issue. Use a private advisory under "Security → Report a
 vulnerability" on GitHub, or write to `security@presidio-group.eu`.
 
+We acknowledge within five business days and aim to ship a fix within 30 days. Reporters
+are credited in the advisory and in the `CHANGELOG.md` entry for the fix unless they ask not
+to be.
+
 ## Security properties
 
 - **No values in evidence.** The record, the envelope, CLI output and error messages carry

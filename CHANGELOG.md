@@ -102,7 +102,7 @@ Second code review, at v0.3.1.
 
 - Seeded mutation tests for verify, the readers and the policy parser.
 - Atheris harnesses (`fuzz/`) and a CI fuzz job.
-- A clean-install check: the wheel installs into a fresh Python 3.11 venv with presidio-evidence
+- Checked by hand: the wheel installs into a fresh Python 3.11 venv with presidio-evidence
   and cryptography only, and the worked example runs and verifies.
 
 ## [0.3.0] — 2026-11-08

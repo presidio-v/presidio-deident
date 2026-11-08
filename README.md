@@ -1,5 +1,11 @@
 # presidio-deident
 
+[![CI](https://github.com/presidio-v/presidio-deident/actions/workflows/ci.yml/badge.svg)](https://github.com/presidio-v/presidio-deident/actions/workflows/ci.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-deident/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-deident)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/16454/badge)](https://www.bestpractices.dev/projects/16454)
+[![PyPI](https://img.shields.io/pypi/v/presidio-deident.svg)](https://pypi.org/project/presidio-deident/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 De-identify a dataset before you license it to an AI developer, and sign a **release
 record** that the buyer verifies offline.
 
@@ -193,7 +199,25 @@ changes become strings. Dates and timestamps can be generalised.
 | v0.7.0 | Public contract: SPEC, `verify-result@1`, signed sample release, threat model, key guidance | built |
 | v1.0.0 | Frozen schema, external review, OpenSSF silver | planned |
 
+**Next 12 months (to November 2027),** in priority order; dates follow design partners:
+
+- First real release with a design partner; what it teaches becomes `dataset-release@2`, with
+  `@1` still verified (ADR-0009).
+- The record schema moves to presidio-evidence after that release (ADR-0004).
+- The detector moves to a shared, standard-library-only PII package (ADR-0003).
+- California DROP composite lists (name + date of birth + ZIP, name + VIN) when a releaser needs
+  them (ADR-0006).
+- A recipient-risk statement, only once its wording has passed legal review (ADR-0007).
+- An external security review and OpenSSF silver, then 1.0.
+
 Full detail is in [`PRESIDIO-REQ.md`](PRESIDIO-REQ.md).
+
+## Contributing and security
+
+Issues and pull requests are welcome on
+[GitHub](https://github.com/presidio-v/presidio-deident/issues); see
+[CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately as described in
+[SECURITY.md](SECURITY.md).
 
 ## License
 
