@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "presidio-deident"
-version = "0.7.0"
+version = "0.7.1"
 description = "De-identify a dataset before licensing it to an AI developer, and sign a release record the buyer verifies offline. Built on presidio-evidence. Independent of Microsoft Presidio."
 readme = "README.md"
 requires-python = ">=3.11"

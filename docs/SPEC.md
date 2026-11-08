@@ -43,7 +43,7 @@ A JSON object. Required keys (the schema allows no others):
 | `rows` | object | `in`, `suppressed`, `out` (integers) |
 | `columns` | list | per input column: `name`, `action`, `changed`, `missing`; `justification` where the policy gives one; `entities` (counts by PII type) for `scrub_text`, and for `keep` when `residual_scan` is true; `normalise` / `generalise` where used |
 | `suppression` | list | per list: `name`, `column`, `format`, `normalise`, `as_of`, `sha256` of the list file, `entries`, `rows_matched` |
-| `detector` | object | `name` (`presidio-regex-pii/1`) and the `entities` it looks for |
+| `detector` | object | `name` (`presidio-regex-pii/2` since 0.7.1; `/1` in earlier records) and the `entities` it looks for |
 | `residual_scan` | bool | whether kept columns were scanned for PII |
 | `rights` | list | `source`, `basis`, `reference`, as declared by the releaser |
 | `tools` | object | versions of `presidio-deident`, `presidio-evidence` (and `pyarrow` for Parquet) |

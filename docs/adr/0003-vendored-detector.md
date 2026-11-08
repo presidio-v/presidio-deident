@@ -22,6 +22,9 @@ agree on a set of tricky inputs (the `[parity]` extra, run in CI). Records name 
 set, not its host package: `presidio-regex-pii/1` (ADR-0009).
 
 **History:** a review of the copy found the email pattern quadratic on a long run of
-local-part characters without `@`. deident's copy anchors the match with a lookbehind; the
-matches are unchanged. The same fix shipped upstream in presidio-hardened-x402 0.14.1
-(GHSA-g42v-7x68-5c4x).
+local-part characters without `@`. deident's copy anchored the match with a lookbehind; the
+claim that matches were unchanged was wrong. The anchored pattern missed an address that
+directly follows another through a local-part character (`a@b.cc+victim@example.com`), a
+redaction bypass that differential testing against the original regex found. Since 0.7.1 an
+explicit scanner returns exactly the original regex's matches in linear time, and the detector
+id is `presidio-regex-pii/2`.
