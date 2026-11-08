@@ -1,0 +1,19 @@
+{
+  "evidence": [
+    {
+      "claimed_at": "2026-01-01T00:00:00Z",
+      "content_hash": "fdce06c3eb573d1683b1f63264547b52d9e736512e5b3ff1ce563f89b9cf4ca4",
+      "framework": "dataset-release",
+      "item_id": "tickets-2026",
+      "ledger_ref": "release.json",
+      "signature": "68f7c0418e69acd7c258a2b83e828829eca36c5ab5446a5f9fb62af13d83f46a3286ed3079f43a00230f2a534cf7a4d0041419d6cc699f8eb1b29fbee0229207",
+      "signer": "acme-data-release",
+      "source": "presidio-deident",
+      "source_version": "0.7.0"
+    }
+  ],
+  "generated_at": "2026-11-08T00:00:00Z",
+  "schema": "presidio-hardened/evidence-ref@3",
+  "source": "presidio-deident",
+  "source_version": "0.7.0"
+}

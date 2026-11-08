@@ -1,0 +1,19 @@
+# hardening.toml — presidio-hardened-repo manifest for presidio-deident.
+# Render input and re-run record for the OpenSSF hardening templates.
+
+[project]
+name = "presidio-deident"
+org = "presidio-v"
+package = "presidio_deident"
+description = "De-identify a dataset before licensing it to an AI developer, and sign a release record the buyer verifies offline."
+language = "python"
+tier = "silver"
+
+[people]
+maintainer = "vstantch"
+reviewer = "ceoofcyber"
+security_contact = "security@presidio-group.eu"
+
+[legal]
+copyright_holder = "PRESIDIO Group"
+license = "MIT"

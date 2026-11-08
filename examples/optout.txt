@@ -1,0 +1,2 @@
+# synthetic opt-out list
+bob@example.org

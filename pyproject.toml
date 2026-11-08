@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling>=1.31,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "presidio-deident"
+version = "0.7.0"
+description = "De-identify a dataset before licensing it to an AI developer, and sign a release record the buyer verifies offline. Built on presidio-evidence. Independent of Microsoft Presidio."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Presidio Security" }]
+keywords = ["de-identification", "pseudonymisation", "data-provenance", "training-data", "dataset-licensing", "evidence"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
+# The whole toolset, including PII detection (vendored), needs only this.
+dependencies = ["presidio-evidence[crypto]>=0.5.1,<0.6"]
+
+[project.optional-dependencies]
+# Parquet input and output.
+parquet = ["pyarrow>=15"]
+# Only for tests/test_detect_parity.py: checks the vendored detector against x402.
+parity = ["presidio-hardened-x402>=0.14,<0.15"]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "pip-audit>=2.7",
+    "jsonschema>=4.21",
+]
+
+[project.urls]
+Homepage = "https://www.presidio-group.eu/dataset-release/"
+Source = "https://github.com/presidio-v/presidio-deident"
+Changelog = "https://github.com/presidio-v/presidio-deident/blob/main/CHANGELOG.md"
+Specification = "https://github.com/presidio-v/presidio-deident/blob/main/docs/SPEC.md"
+
+[project.scripts]
+deident = "presidio_deident.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/presidio_deident"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"fuzz/**" = ["S101", "SIM105", "N802"]
+"tests/**" = ["S101", "S105", "S106", "S311", "E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=presidio_deident --cov-branch --cov-report=term-missing --cov-fail-under=90"

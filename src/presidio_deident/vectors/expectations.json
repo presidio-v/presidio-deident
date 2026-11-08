@@ -1,0 +1,12 @@
+{
+  "format": "presidio-deident/vectors@1",
+  "note": "Append-only. A published vector is never edited or removed. Check order is not part of the contract.",
+  "vectors": [
+    {"name": "sample", "release": "sample-release", "trust": "trust.json", "ok": true, "failing": []},
+    {"name": "untrusted-signer", "release": "sample-release", "trust": "other-trust.json", "ok": false, "failing": ["signature (evidence-ref@3, trusted signer)"]},
+    {"name": "tampered-file", "release": "tampered-file", "trust": "trust.json", "ok": false, "failing": ["tickets.csv sha256"]},
+    {"name": "envelope-mismatch", "release": "envelope-mismatch", "trust": "trust.json", "ok": false, "failing": ["unsigned envelope fields match the record"]},
+    {"name": "record-edited", "release": "record-edited", "trust": "trust.json", "ok": false, "failing": ["ref signs this record"]},
+    {"name": "float-in-record", "release": "float-in-record", "trust": "trust.json", "ok": false, "failing": ["record canonical"]}
+  ]
+}
