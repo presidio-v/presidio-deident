@@ -17,7 +17,7 @@ question for you and your counsel.
 
 It runs where the data is. There is no hosted mode and no network access during a run.
 
-**Status: alpha (v0.7.0).** The record format is `dataset-release@1`; see
+**Status: alpha (v0.7.1).** The record format is `dataset-release@1`; see
 [`docs/SPEC.md`](docs/SPEC.md) and the compatibility rules in [`SEMVER.md`](SEMVER.md). The
 requirements and version plan are in [`PRESIDIO-REQ.md`](PRESIDIO-REQ.md), and decisions in
 [`docs/adr/`](docs/adr/).
@@ -197,6 +197,7 @@ changes become strings. Dates and timestamps can be generalised.
 | v0.5.0 | Verify hardening from the second review; one `entities` key per column | built |
 | v0.6.0 | California DROP email and phone deletion lists (`format = "ca-drop"`) | built |
 | v0.7.0 | Public contract: SPEC, `verify-result@1`, signed sample release, threat model, key guidance | built |
+| v0.7.1 | Security fix: email redaction bypass for an address directly after another; detector id `presidio-regex-pii/2` | built |
 | v1.0.0 | Frozen schema, external review, OpenSSF silver | planned |
 
 **Next 12 months (to November 2027),** in priority order; dates follow design partners:
