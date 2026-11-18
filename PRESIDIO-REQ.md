@@ -150,7 +150,8 @@ Decisions are recorded in `docs/adr/`.
     format, file hashes and sizes;
   - refuses path traversal and symlinks; offers `--json`.
 - [x] `deident croissant`: a minimal Croissant pointer to a verified release.
-- [ ] Published spec and sample. These wait on ADR-0008 (publishing).
+- [x] Published spec and sample: `docs/SPEC.md` and `examples/sample-release/`, delivered
+  in v0.7.0.
 
 ## v0.2.0: quasi-identifier risk and generalisation — **Delivered 2026-11-08**
 
@@ -212,6 +213,13 @@ Decisions are recorded in `docs/adr/`.
 - A committed, signed sample release, verified in CI.
 - `verify --json` as `verify-result@1`; check names and exit codes frozen by tests.
 - Detector id `presidio-regex-pii/1` (ADR-0009).
+
+## v0.7.1: email redaction bypass — **Delivered 2026-11-08**
+
+- The email pattern missed an address that directly follows another through a local-part
+  character (`a@b.cc+victim@example.com`). An explicit linear-time scanner now returns
+  exactly the matches of the original regex; a differential test checks it on random input.
+- Detector id in new records is `presidio-regex-pii/2`; `/1` records keep verifying.
 
 ## Later versions (not scheduled)
 

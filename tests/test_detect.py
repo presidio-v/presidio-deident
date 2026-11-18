@@ -14,6 +14,8 @@ SAMPLES = [
     "zero​width al​ice@example.com, fullwidth ａｌｉｃｅ@example.com",
     "cyrillic аlice@example.com",
     "bad escapes %zz &unknown; &#0; tail%",
+    # 0.7.1 regression: 0.2.0-0.7.0 missed an address directly after another (x402 never did).
+    "adjacent a@b.cc+victim@example.com end",
 ]
 
 
