@@ -28,7 +28,7 @@ dependencies = ["presidio-evidence[crypto]>=0.5.1,<0.6"]
 # Parquet input and output.
 parquet = ["pyarrow>=15"]
 # Only for tests/test_detect.py::test_parity_with_x402: checks the vendored detector against x402.
-parity = ["presidio-hardened-x402>=0.14,<0.15"]
+parity = ["presidio-hardened-x402>=0.14,<0.16"]
 dev = [
     "pytest>=8.0",
     "pytest-cov>=5.0",
